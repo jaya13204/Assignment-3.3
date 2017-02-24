@@ -1,0 +1,76 @@
+1.List the components of hadoop2.X and explain each component in detail
+
+
+
+The major components of hadoop2.x  are
+*YARN
+*MapReduce
+*HDFS
+
+
+
+*YARN:
+         YARN stand for  Yet Another Resource Negotiator which is a cluster management technology of
+hadoop2.It was found by Apache Software Foundation and it is a open source distributed processing 
+framework.YARN is a sofware that decouples Mapreduce's resource management and scheduling
+capabilities from the data , thus enabling hadoop to support more processing approaches and a 
+broader of application.YARN extends the power pf hadoop and new technologies found within the 
+data center.It has the advantage of cost effective,linear-scale storage and processing.
+
+
+
+
+*MapReduce:
+                     Mapreduce is used for processing the stored data.MapReduce is a 
+Batch Processing or Distributed Data Processing Module. It is built by following Google’s 
+MapReduce Algorithm. It is also know as “MR V1” or “Classic MapReduce” as it is part of Hadoop 1.x.
+It is composed of two main components:
+
+-Job Tracker:
+                    It is the service that farms out MapReduce tasks to specific nodes in the cluster,ideally
+the nodes that have the data or atleast are in same rack.Controls overall execution of map reduce jobs.
+Job Tracker runs on a seperate node and not usually on data node.Job tracker talks to the name node to 
+determine the location of data.
+
+
+-Task Tracker:
+                    TaskTracker is replaced by Node Manager in MRv2.TaskTrackers will be assigned Mapper and
+ Reducer tasks to execute by JobTracker.It periodically communicates with the job tracker to give updates
+receives instructions.
+
+
+
+
+
+*HDFS:
+           Hadoop Distributed File System is used for storage purpose in hadoop.It consists of single namenode,
+called as master which manages the namespace of filesystem.There are number of data nodes which manages 
+the storage to the nodes they run.Hdfs is designed to work with large data sets.The default block size is 64MB.The
+three main components of HDFS are:
+
+
+-Name Node:
+                    Name node is also known as master and stores only metadata of HDFS.Name node is a 
+single point of failure in hadoop cluster.Name node is so critical to HDFS and when the name node is down.
+HDFS/Hadoop cluster is inaccessible.Name node contains Hadoop Filesystem tree.It contains in-memory mapping 
+of which blocks are  stored in which data node.
+
+-Secondary NameNode:
+                             Secondary Name Node is a specially dedicated node in HDFS.Its vital role is to take 
+checkpoints of the filesystem metadata present on namenode.It is not a backup for Namenode.Its just
+a helper node  for Namenode.
+
+
+-Data Node:
+                  Datanode  is called as slaves.It is responsible for storing the actual data in hdfs.Data node announces
+itself to the name node along with the list of blocks which are responsible for,when it starts.It sends signal to the name
+node periodically to verify if it is active.It is called as Workhouse of the system.It performs all block operation 
+including checksum.
+
+
+
+
+
+
+
+
